@@ -14,12 +14,12 @@ public class Cannon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, object.5f);
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
     void UpdateTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectWithTag(enemyTag);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
