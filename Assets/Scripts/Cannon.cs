@@ -14,12 +14,12 @@ public class Cannon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, object.5f)
+        InvokeRepeating("UpdateTarget", 0f, object.5f);
     }
 
     void UpdateTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectWithTag();
+        GameObject[] enemies = GameObject.FindGameObjectWithTag(enemyTag);
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
@@ -35,7 +35,7 @@ public class Cannon : MonoBehaviour
 
         if (nearestEnemy != null && shortestDistance <= range)
         {
-            target = nearnestEnemy.transform;
+            target = nearestEnemy.transform;
         }
 
     }
@@ -55,7 +55,7 @@ public class Cannon : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        OnDrawGizmosSelected().color = Color.red;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
 }
