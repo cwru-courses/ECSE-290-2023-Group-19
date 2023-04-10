@@ -1,40 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
     public Transform enemyPrefab;
     public Transform spawnPoint;
 
-    public float timeBetweenWaves = 5f;
-    private float countDown = 2f;
+    public float timeBetweenWaves = 6f;
+    private float countDown = 1.5f;
 
-    private int waveNumber = 1;
+    public TextMeshProUGUI waveCountDownText;
 
-    void update ()
+    private int waveNumber = 0;
+
+    void Update ()
     {
         Debug.Log("123");
         if (countDown <= 0f)
         {
-            spawnWave();
+            StartCoroutine(SpawnWave());
             countDown = timeBetweenWaves;
         }
         countDown -= Time.deltaTime;
+        waveCountDownText.text = "Next Wave Coming: " + Mathf.Round(countDown).ToString() + "s";
     }
 
-    void spawnWave ()
+    IEnumerator SpawnWave ()
     {
+        waveNumber++;
         for (int i = 0; i < waveNumber; i++)
         {
             spawnEnemy();
+            yield return new WaitForSeconds(0.5f);
         }
 
-        waveNumber++;
     }
 
     void spawnEnemy()
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemyPrefab, spawnPoint.position + new Vector3(0.0f, -0.5f, 0.0f), spawnPoint.rotation);
     }
 }
