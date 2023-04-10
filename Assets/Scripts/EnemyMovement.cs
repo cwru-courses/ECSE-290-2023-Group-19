@@ -29,6 +29,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if (wavepointIndex >= Waypoints.points.Length - 1)
         {
+            // update player score
+            PlayerScore.EnemyReachedDesti++;
             Destroy(gameObject);
             return;
         }

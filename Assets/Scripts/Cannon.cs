@@ -11,6 +11,12 @@ public class Cannon : MonoBehaviour
     public Transform rotater;
     public float turnSpeed = 10f;
 
+    public float fireRate = 1f;
+    private float fireCountdown = 0.4f;
+
+    public GameObject ammunitionPrefab;
+    public Transform firePoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +64,24 @@ public class Cannon : MonoBehaviour
         Vector3 rotationAngle = Quaternion.Lerp(rotater.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         //Debug.Log("rotate");
         rotater.rotation = Quaternion.Euler(0f, rotationAngle.y, 0f);
+
+        if (fireCountdown <= 0f)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+        fireCountdown -= Time.deltaTime;
+    }
+
+    void Shoot()
+    {
+        GameObject newAmmunition = (GameObject)Instantiate(ammunitionPrefab, firePoint.position, firePoint.rotation);
+        Ammunition a = newAmmunition.GetComponent<Ammunition>();
+        
+        if (a != null)
+        {
+            a.Seek(target);
+        }
     }
 
     void OnDrawGizmosSelected()
