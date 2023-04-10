@@ -17,7 +17,6 @@ public class WaveSpawner : MonoBehaviour
 
     void Update ()
     {
-        Debug.Log("123");
         if (countDown <= 0f)
         {
             StartCoroutine(SpawnWave());
