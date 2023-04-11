@@ -7,7 +7,6 @@ public class Node : MonoBehaviour
 {
     // The color that the grass cube will change to
     public Color hoverColor;
-    public Vector3 positionOffset;
 
     [Header("Optional")]
     // The turret on this grass tube
@@ -28,7 +27,7 @@ public class Node : MonoBehaviour
 
     public Vector3 GetBuildPosition()
     {
-        return transform.position + positionOffset;
+        return transform.position + new Vector3(0.9f, 1.5f, -0.9f);
     }
 
     private void OnMouseDown()
@@ -51,6 +50,7 @@ public class Node : MonoBehaviour
         }
         else
         {
+
             buildManager.BuildTurretOn(this);
         }
     }
