@@ -33,7 +33,7 @@ public class Cannon : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            Debug.Log(enemy.transform.position);
+//            Debug.Log(enemy.transform.position);
             if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
