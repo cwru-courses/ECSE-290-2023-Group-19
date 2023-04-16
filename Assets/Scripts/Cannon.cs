@@ -76,6 +76,7 @@ public class Cannon : MonoBehaviour
     void Shoot()
     {
         GameObject newAmmunition = (GameObject)Instantiate(ammunitionPrefab, firePoint.position, firePoint.rotation);
+        //newAmmunition.transform.Rotate(90.0f, 0.0f, 0.0f, Space.Self);
         Ammunition a = newAmmunition.GetComponent<Ammunition>();
         
         if (a != null)
