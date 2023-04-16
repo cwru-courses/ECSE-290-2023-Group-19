@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed = 6f;
+    public float initialSpeed = 6f;
+    public float speed;
+    public float health = 100;
+    private float initialHealth;
     private Transform target;
     private int wavepointIndex = 0;
+    public GameObject dieEffect;
+    public Image healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
+        initialHealth = health;
+        speed = initialSpeed;
         target = Waypoints.points[0];
     }
 
@@ -36,5 +44,22 @@ public class EnemyMovement : MonoBehaviour
         }
         wavepointIndex++;
         target = Waypoints.points[wavepointIndex];
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        healthBar.fillAmount = health / initialHealth;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        GameObject effect = (GameObject)Instantiate(dieEffect, transform.position, transform.rotation);
+        Destroy(effect, 2f);
+        Destroy(this.gameObject);
     }
 }

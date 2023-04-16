@@ -4,7 +4,8 @@ public class Ammunition : MonoBehaviour
 {
     private Transform target;
     public float speed = 70f;
-    public GameObject impactEffect;
+    public float damage = 30;
+    //public GameObject impactEffect;
 
     public void Seek(Transform _target)
     {
@@ -23,7 +24,7 @@ public class Ammunition : MonoBehaviour
         Vector3 direction = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
 
-        if(direction.magnitude <= distanceThisFrame)
+        if (direction.magnitude <= distanceThisFrame)
         {
             //Debug.Log("hit");
             HitTarget();
@@ -34,9 +35,15 @@ public class Ammunition : MonoBehaviour
 
     void HitTarget()
     {
-        GameObject effect = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(effect, 2f);
-        Destroy(target.gameObject);
+        //GameObject effect = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
+        //Destroy(effect, 2f);
+        //Destroy(target.gameObject);
+        Damage(target);
         Destroy(gameObject);
+    }
+
+    void Damage(Transform enemy)
+    {
+        enemy.gameObject.GetComponent<EnemyMovement>().TakeDamage(damage);
     }
 }
