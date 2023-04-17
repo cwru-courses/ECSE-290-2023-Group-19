@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -86.697, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.278}
+  m_AnchoredPosition: {x: 0, y: 1.75}
   m_SizeDelta: {x: 762.5, y: 317}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1362759464140625029
@@ -153,6 +153,7 @@ MonoBehaviour:
   health: 200
   dieEffect: {fileID: 6288667302884480372, guid: 98ff03651e0246147942afdb7c58a1da, type: 3}
   healthBar: {fileID: 4335900991565604086}
+  isSlowDown: 0
 --- !u!1 &8471972924894044059
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828372454387334222, guid: 8cdcf834108c30b4e9431b4cca968ca9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8828372454387334222, guid: 8cdcf834108c30b4e9431b4cca968ca9, type: 3}
       propertyPath: m_LocalPosition.z

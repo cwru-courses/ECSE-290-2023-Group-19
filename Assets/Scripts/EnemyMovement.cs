@@ -13,6 +13,7 @@ public class EnemyMovement : MonoBehaviour
     private int wavepointIndex = 0;
     public GameObject dieEffect;
     public Image healthBar;
+    public bool isSlowDown = false;
 
     // Start is called before the first frame update
     void Start()

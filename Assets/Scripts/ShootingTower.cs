@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cannon : MonoBehaviour
+public class ShootingTower : MonoBehaviour
 {
     private Transform target;
     public float range = 5f;
@@ -16,6 +16,7 @@ public class Cannon : MonoBehaviour
 
     public GameObject ammunitionPrefab;
     public Transform firePoint;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +79,7 @@ public class Cannon : MonoBehaviour
         GameObject newAmmunition = (GameObject)Instantiate(ammunitionPrefab, firePoint.position, firePoint.rotation);
         //newAmmunition.transform.Rotate(90.0f, 0.0f, 0.0f, Space.Self);
         Ammunition a = newAmmunition.GetComponent<Ammunition>();
+        audioSource.Play();
         
         if (a != null)
         {

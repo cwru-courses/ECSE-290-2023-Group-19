@@ -18,12 +18,12 @@ public class TurretSell : MonoBehaviour
 
     public int Level { get; set; }
 
-    private Cannon _cannon;
+    private ShootingTower _cannon;
 
     // Start is called before the first frame update
     void Start()
     {
-        _cannon = GetComponent<Cannon>();
+        _cannon = GetComponent<ShootingTower>();
         UpgradeCost = upgradeInitialCost;
 
         SellPerc = sellPert;

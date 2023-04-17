@@ -23,6 +23,8 @@ public class Ammunition : MonoBehaviour
 
         Vector3 direction = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
+        var rotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1);
 
         if (direction.magnitude <= distanceThisFrame)
         {
