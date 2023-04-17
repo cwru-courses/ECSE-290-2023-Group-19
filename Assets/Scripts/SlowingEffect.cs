@@ -14,10 +14,10 @@ public class SlowingEffect : MonoBehaviour
 
     public GameObject slowingEffect;
     private bool slowing;
-    public float slowDown_speed;
+    public float slowDown_percent;
     public Transform firePoint;
 
-    // The color that the grass cube will change to
+    // The color that the turret will change to
     public Color hoverColor;
     private Color startColor;
     private Renderer rend;
@@ -35,7 +35,7 @@ public class SlowingEffect : MonoBehaviour
         if (slowing == false)
         {
             slowing = true;
-            InvokeRepeating("UpdateTarget", 0f, 0.2f);
+            InvokeRepeating("UpdateTarget", 0f, 0.05f);
             createEffect();
             StartCoroutine("startDetection");
         }
@@ -61,12 +61,13 @@ public class SlowingEffect : MonoBehaviour
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
             if (enemy != null && distanceToEnemy <= range)
             {
+                enemy.GetComponent<EnemyMovement>().isSlowDown = true;    // mark them as being slowed down
                 SlowDown(enemy);
             }
-            else if (enemy != null && distanceToEnemy > range)
+            else if (enemy != null && distanceToEnemy > range && distanceToEnemy < (range + 0.2f))
             {
-                enemy.GetComponent<EnemyMovement>().speed = enemy.GetComponent<EnemyMovement>().initialSpeed;
                 enemy.GetComponent<EnemyMovement>().isSlowDown = false;
+                enemy.GetComponent<EnemyMovement>().stopSlowDown(slowDown_percent);
             }
         }
     }
@@ -79,11 +80,7 @@ public class SlowingEffect : MonoBehaviour
 
     void SlowDown(GameObject enemy)
     {
-        if (!enemy.GetComponent<EnemyMovement>().isSlowDown)
-        {
-            enemy.GetComponent<EnemyMovement>().speed -= slowDown_speed;
-            enemy.GetComponent<EnemyMovement>().isSlowDown = true;
-        }
+        enemy.GetComponent<EnemyMovement>().slowDown(slowDown_percent);
     }
 
     void createEffect()
@@ -98,10 +95,10 @@ public class SlowingEffect : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (enemy != null && distanceToEnemy <= range)
+            if (enemy != null && distanceToEnemy <= (range + 0.2f))
             {
-                enemy.GetComponent<EnemyMovement>().speed = enemy.GetComponent<EnemyMovement>().initialSpeed;
                 enemy.GetComponent<EnemyMovement>().isSlowDown = false;
+                enemy.GetComponent<EnemyMovement>().stopSlowDown(slowDown_percent);
             }
         }
     }

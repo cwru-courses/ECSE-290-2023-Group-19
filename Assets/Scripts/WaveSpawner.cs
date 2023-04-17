@@ -13,7 +13,7 @@ public class WaveSpawner : MonoBehaviour
 
     public TextMeshProUGUI waveCountDownText;
 
-    private int waveNumber = 0;
+    private int waveNumber = 6;
 
     void Update ()
     {
