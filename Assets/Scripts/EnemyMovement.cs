@@ -59,6 +59,19 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    public void slowDown(float percent)
+    {
+        speed = initialSpeed * percent;
+    }
+
+    public void stopSlowDown(float percent)
+    {
+        if (isSlowDown == false)
+        {
+            speed = initialSpeed;
+        }
+    }
+
     void Die()
     {
         GameObject effect = (GameObject)Instantiate(dieEffect, transform.position, transform.rotation);

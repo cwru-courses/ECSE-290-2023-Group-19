@@ -184,9 +184,9 @@ MonoBehaviour:
   fireRate: 1
   cd: 10
   slowingEffect: {fileID: 4932088507883938021, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
-  slowDown_speed: 2
+  slowDown_percent: 0.5
   firePoint: {fileID: 8056528034408195378}
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
+  hoverColor: {r: 0, g: 0.7025659, b: 1, a: 0}
   audioSource: {fileID: 9052543557421840528}
 --- !u!82 &9052543557421840528
 AudioSource:
