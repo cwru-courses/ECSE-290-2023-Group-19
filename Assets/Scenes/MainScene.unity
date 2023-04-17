@@ -7562,7 +7562,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1751165971982920101, guid: e8b85d40b976e884392e9274c6eb8216, type: 3}
       propertyPath: range
-      value: 4
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1751165971982920101, guid: e8b85d40b976e884392e9274c6eb8216, type: 3}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -1751165971982920101, guid: e8b85d40b976e884392e9274c6eb8216, type: 3}
+      propertyPath: timeBeforeExploding
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 105315358767092439, guid: e8b85d40b976e884392e9274c6eb8216, type: 3}
       propertyPath: m_RootOrder
@@ -7578,7 +7586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 105315358767092439, guid: e8b85d40b976e884392e9274c6eb8216, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.83
+      value: -11.6
       objectReference: {fileID: 0}
     - target: {fileID: 105315358767092439, guid: e8b85d40b976e884392e9274c6eb8216, type: 3}
       propertyPath: m_LocalRotation.w

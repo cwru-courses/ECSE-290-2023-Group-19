@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class BombExplode : MonoBehaviour
 {
-    public float range = 2.0f;
+    public float timeBeforeExploding;
+    public float range;
     public string enemyTag = "Enemy";
-    public float damage = 80.0f;
+    public float damage;
+    public GameObject explodeEffect;
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +24,7 @@ public class BombExplode : MonoBehaviour
 
     IEnumerator explode()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(timeBeforeExploding);
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         foreach (GameObject enemy in enemies)
         {
@@ -29,7 +32,9 @@ public class BombExplode : MonoBehaviour
             if (enemy != null && distanceToEnemy <= range)
             {
                 Damage(enemy);
-                Destroy(gameObject);
+                createEffect();
+                audioSource.Play();
+                transform.position = transform.position + new Vector3(0f, -10f, 0f);
             }
         }
     }
@@ -37,6 +42,19 @@ public class BombExplode : MonoBehaviour
     void Damage(GameObject enemy)
     {
         enemy.GetComponent<EnemyMovement>().TakeDamage(damage);
+    }
+
+    void createEffect()
+    {
+        GameObject effect = (GameObject)Instantiate(explodeEffect, transform.position, transform.rotation);
+        StartCoroutine(waitToDestroyEffect(effect));
+    }
+
+    IEnumerator waitToDestroyEffect(GameObject effect)
+    {
+        yield return new WaitForSeconds(1.0f);
+        Destroy(effect);
+        Destroy(gameObject);
     }
 
 }
