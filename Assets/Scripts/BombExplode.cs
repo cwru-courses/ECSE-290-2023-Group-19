@@ -34,9 +34,9 @@ public class BombExplode : MonoBehaviour
                 Damage(enemy);
                 createEffect();
                 audioSource.Play();
-                transform.position = transform.position + new Vector3(0f, -10f, 0f);
             }
         }
+        transform.position = transform.position + new Vector3(0f, -10f, 0f);
     }
 
     void Damage(GameObject enemy)

@@ -47,6 +47,26 @@ public class BuildManager : MonoBehaviour
        
     }
 
+    // SEEEEEEEEEEEE here !!!!!!!!!!!!!!!!!!! @Lara
+    public void BuildPropOn(EnemyPathNode node)       // this type here is revised
+    {
+        if (PlayerStats.Money < turretToBuild.cost)
+        {
+            Debug.Log("Not Enough Money");
+        }
+
+        else
+        {
+            PlayerStats.Money -= turretToBuild.cost;
+            // else we build a turret
+            GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+            node.prop = turret;
+
+            Debug.Log("Money left: " + PlayerStats.Money);
+        }
+
+    }
+
     public void SelectTurretoBuild(TurretBlueprint turret)
     {
         turretToBuild = turret;
