@@ -9,11 +9,13 @@ public class EnemyMovement : MonoBehaviour
     public float speed;
     public float health = 100;
     private float initialHealth;
+    public int killMoney = 50;
     private Transform target;
     private int wavepointIndex = 0;
     public GameObject dieEffect;
     public Image healthBar;
     public bool isSlowDown = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -77,5 +79,8 @@ public class EnemyMovement : MonoBehaviour
         GameObject effect = (GameObject)Instantiate(dieEffect, transform.position, transform.rotation);
         Destroy(effect, 2f);
         Destroy(this.gameObject);
+        PlayerStats.totalMoney += killMoney;
+
+        Debug.Log("Total money " + PlayerStats.totalMoney);
     }
 }

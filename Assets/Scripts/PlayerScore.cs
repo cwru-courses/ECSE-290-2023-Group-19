@@ -7,6 +7,7 @@ public class PlayerScore : MonoBehaviour
 {
     public static int EnemyReachedDesti;
     public TextMeshProUGUI enemyCountText;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -3,6 +3,7 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     public TurretBlueprint cannon;
+    public TurretBlueprint arrowTower;
     BuildManager buildManager;
 
    public void SelectCannon()
@@ -11,10 +12,10 @@ public class Shop : MonoBehaviour
         buildManager.SelectTurretoBuild(cannon);
     }
 
-    public void SelectAnotherTurret()
+    public void SelectArrowTurret()
     {
-        Debug.Log("Another Turret Purchased");
-        //buildManager.SelectTurretoBuild(buildManager.anotherTurretPrefab);
+        Debug.Log("Arrow Turret Selected");
+        buildManager.SelectTurretoBuild(arrowTower);
     }
 
     // Start is called before the first frame update

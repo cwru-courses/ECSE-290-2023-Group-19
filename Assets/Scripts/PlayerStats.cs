@@ -3,13 +3,18 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public static int Money;
+    public static int totalMoney;
     public int startMoney = 400;
+
+    public static int totalWood;
+    public int startWood = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        Money = startMoney;
+        totalMoney = startMoney;
+        totalWood = startWood;
+
     }
 
     // Update is called once per frame
@@ -17,4 +22,5 @@ public class PlayerStats : MonoBehaviour
     {
         
     }
+
 }

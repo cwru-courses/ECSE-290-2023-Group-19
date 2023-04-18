@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: deadTree Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b84ad9daa528734e5930406e445c30fe, type: 3}
+      propertyPath: m_TagString
+      value: Collectible
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84ad9daa528734e5930406e445c30fe, type: 3}
 --- !u!1 &6604790417187696603 stripped
