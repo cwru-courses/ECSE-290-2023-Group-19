@@ -14763,7 +14763,7 @@ MonoBehaviour:
     prefab: {fileID: 129420, guid: d3ef549050e9b0542b4f3c3dd47a1085, type: 3}
     cost: 50
   arrowTower:
-    prefab: {fileID: 0}
+    prefab: {fileID: 4644583560905145983, guid: 0500c7f47626ec441b30ee6614f5d2df, type: 3}
     cost: 100
   slowingTower:
     prefab: {fileID: 8285940201275191969, guid: e3327bdc614dad44998e3311b3ab4794, type: 3}
