@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShootingTower : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class ShootingTower : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountdown = 0.4f;
 
+    public float health = 100;
+    private float initialHealth;
+    public Image healthBar;
+
     public GameObject ammunitionPrefab;
     public Transform firePoint;
     public AudioSource audioSource;
@@ -21,7 +26,9 @@ public class ShootingTower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        initialHealth = health;
+        InvokeRepeating("UpdateTarget", 0f, 0.2f);
+        InvokeRepeating("Decay", 0f, 1f);
     }
 
     void UpdateTarget()
@@ -47,6 +54,10 @@ public class ShootingTower : MonoBehaviour
         {
             target = nearestEnemy.transform;
             //Debug.Log("change target");
+        }
+        else
+        {
+            target = null;
         }
         
     }
@@ -85,6 +96,26 @@ public class ShootingTower : MonoBehaviour
         {
             a.Seek(target);
         }
+    }
+
+    public void Decay()
+    {
+        TakeDamage(1.0f);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        healthBar.fillAmount = health / initialHealth;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+
     }
 
     void OnDrawGizmosSelected()
