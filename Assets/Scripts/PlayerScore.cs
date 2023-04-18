@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerScore : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class PlayerScore : MonoBehaviour
     {
         gameDurationText.text = "Game Duration: " + gameDuration.ToString() + "s";
         PlayerHealthText.text = "Your Health: " + playerHealth + "hp";
+        if (playerHealth <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     void updateDuration()
