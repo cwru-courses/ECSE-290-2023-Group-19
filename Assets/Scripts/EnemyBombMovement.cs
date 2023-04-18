@@ -20,6 +20,7 @@ public class EnemyBombMovement : MonoBehaviour
     public float damage = 40.0f;
     public GameObject bombCollectable;
     public AudioSource audioSource;
+    public int damageToPlayerHealth = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,7 @@ public class EnemyBombMovement : MonoBehaviour
         {
             // update player score
             PlayerScore.EnemyReachedDesti++;
+            PlayerScore.takeDamage(damageToPlayerHealth);
             Destroy(gameObject);
             return;
         }
