@@ -5820,7 +5820,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652818453}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
@@ -5901,7 +5901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21364b05f48a7fe4fab55f62197ef2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  play: {fileID: 1296234635}
+  pause: {fileID: 652818457}
 --- !u!114 &652818457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8618,7 +8618,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3105178887601719143, guid: d7f70251ea71f4044958b82a1f97a903, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3105178887601719143, guid: d7f70251ea71f4044958b82a1f97a903, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9693,7 +9693,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3105178887601719143, guid: d7f70251ea71f4044958b82a1f97a903, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3105178887601719143, guid: d7f70251ea71f4044958b82a1f97a903, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10533,7 +10533,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1143164904
 MonoBehaviour:
@@ -11775,7 +11775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21364b05f48a7fe4fab55f62197ef2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  play: {fileID: 1296234635}
+  pause: {fileID: 652818457}
 --- !u!114 &1296234634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12676,7 +12676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21364b05f48a7fe4fab55f62197ef2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  play: {fileID: 0}
+  pause: {fileID: 0}
 --- !u!114 &1342945011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14140,7 +14140,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3105178887601719143, guid: d7f70251ea71f4044958b82a1f97a903, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3105178887601719143, guid: d7f70251ea71f4044958b82a1f97a903, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18665,8 +18665,8 @@ RectTransform:
   - {fileID: 1160744108}
   - {fileID: 1801743293}
   - {fileID: 1342945008}
-  - {fileID: 652818454}
   - {fileID: 1296234632}
+  - {fileID: 652818454}
   - {fileID: 1595214935}
   m_Father: {fileID: 0}
   m_RootOrder: 21
