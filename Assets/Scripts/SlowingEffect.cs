@@ -31,8 +31,10 @@ public class SlowingEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        initialHealth = health;
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+        InvokeRepeating("Decay", 0f, 1f);
     }
 
     private void OnMouseDown()
@@ -44,7 +46,6 @@ public class SlowingEffect : MonoBehaviour
             createEffect();
             StartCoroutine("startDetection");
         }
-        
     }
 
     IEnumerator startDetection()
@@ -77,12 +78,6 @@ public class SlowingEffect : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void SlowDown(GameObject enemy)
     {
         enemy.GetComponent<EnemyMovement>().slowDown(slowDown_percent);
@@ -106,6 +101,11 @@ public class SlowingEffect : MonoBehaviour
                 enemy.GetComponent<EnemyMovement>().stopSlowDown(slowDown_percent);
             }
         }
+    }
+
+    public void Decay()
+    {
+        TakeDamage(1.0f);
     }
 
     public void TakeDamage(float damage)

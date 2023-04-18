@@ -28,12 +28,12 @@ public class BombExplode : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         foreach (GameObject enemy in enemies)
         {
+            createEffect();
+            audioSource.Play();
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
             if (enemy != null && distanceToEnemy <= range)
             {
                 Damage(enemy);
-                createEffect();
-                audioSource.Play();
             }
         }
         transform.position = transform.position + new Vector3(0f, -10f, 0f);

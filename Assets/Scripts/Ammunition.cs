@@ -46,6 +46,14 @@ public class Ammunition : MonoBehaviour
 
     void Damage(Transform enemy)
     {
-        enemy.gameObject.GetComponent<EnemyMovement>().TakeDamage(damage);
+        if (enemy.gameObject.GetComponent<EnemyMovement>() != null)
+        {
+            enemy.gameObject.GetComponent<EnemyMovement>().TakeDamage(damage);
+        }
+        else
+        {
+            enemy.gameObject.GetComponent<EnemyBombMovement>().TakeDamage(damage);
+        }
+        
     }
 }
