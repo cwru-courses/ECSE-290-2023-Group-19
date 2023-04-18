@@ -4,6 +4,7 @@ public class Shop : MonoBehaviour
 {
     public TurretBlueprint cannon;
     public TurretBlueprint arrowTower;
+    public TurretBlueprint slowingTower;
     BuildManager buildManager;
 
    public void SelectCannon()
@@ -16,6 +17,12 @@ public class Shop : MonoBehaviour
     {
         Debug.Log("Arrow Turret Selected");
         buildManager.SelectTurretoBuild(arrowTower);
+    }
+
+    public void SelectSlowingTurret()
+    {
+        Debug.Log("Slowing Turret Selected");
+        buildManager.SelectTurretoBuild(slowingTower);
     }
 
     // Start is called before the first frame update
