@@ -5,11 +5,11 @@ using static UnityEngine.GraphicsBuffer;
 
 public class BuildManager : MonoBehaviour
 {
-    // can be referenced everywhere
+
     public static BuildManager instance;
-    // default turret to build 
+
     public GameObject standardTurretPrefab;
-    public GameObject anotherTurretPrefab;
+    public GameObject arrowTurretPrefab;
     private TurretBlueprint turretToBuild;
 
     void Awake()
@@ -30,19 +30,19 @@ public class BuildManager : MonoBehaviour
 
     public void BuildTurretOn(Node node)
     {
-        if (PlayerStats.Money < turretToBuild.cost)
+        if (PlayerStats.totalMoney < turretToBuild.cost)
         {
             Debug.Log("Not Enough Money");
         }
 
         else
         {
-            PlayerStats.Money -= turretToBuild.cost;
+            PlayerStats.totalMoney -= turretToBuild.cost;
             // else we build a turret
             GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
             node.turret = turret;
 
-            Debug.Log("Money left: " + PlayerStats.Money);
+            Debug.Log("Money left: " + PlayerStats.totalMoney);
         }
        
     }
