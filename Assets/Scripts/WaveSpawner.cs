@@ -19,7 +19,6 @@ public class WaveSpawner : MonoBehaviour
 
     private void Start()
     {
-        //InvokeRepeating("randomSpawnBetweenWaves", 0f, 2f);
     }
 
     void Update ()
@@ -30,7 +29,7 @@ public class WaveSpawner : MonoBehaviour
             countDown = timeBetweenWaves;
         }
         countDown -= Time.deltaTime;
-        waveCountDownText.text = "Next Wave Coming: " + Mathf.Round(countDown).ToString() + "s";
+        waveCountDownText.text = "Next Wave In: " + Mathf.Round(countDown).ToString() + "s";
     }
 
     void spawnNormalEnemy()
@@ -72,50 +71,4 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-
-    /*
-    void randomSpawnBetweenWaves()
-    {
-        randomSpawnNormalEnemy();
-        randomSpawnDragon();
-    }
-    
-    IEnumerator SpawnWave ()
-    {
-        waveNumber++;
-        if (waveNumber >= 1)
-        {
-            for (int i = 0; i < Random.Range(waveNumber, 2 * waveNumber); i++)
-            {
-                spawnNormalEnemy();
-                yield return new WaitForSeconds(0.3f);
-            }
-        }
-        if (waveNumber >= 3) {
-            for (int i = 0; i < Random.Range(0.3f * waveNumber, 0.75f * waveNumber); i++)
-            {
-                spawnDragon();
-                yield return new WaitForSeconds(0.5f);
-            }
-        }
-    }
-
-    void randomSpawnNormalEnemy()
-    {
-        int number = Random.Range(0, 10);
-        if (number >= 6)
-        {
-            spawnNormalEnemy();
-        }
-    }
-
-    void randomSpawnDragon()
-    {
-        int number = Random.Range(0, 10);
-        if (number >= 8)
-        {
-            spawnNormalEnemy();
-        }
-    }
-    */
 }

@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     public GameObject dieEffect;
     public Image healthBar;
     public bool isSlowDown = false;
+    public int damageToPlayerHealth = 1;
     
 
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class EnemyMovement : MonoBehaviour
         {
             // update player score
             PlayerScore.EnemyReachedDesti++;
+            PlayerScore.takeDamage(damageToPlayerHealth);
             Destroy(gameObject);
             return;
         }
