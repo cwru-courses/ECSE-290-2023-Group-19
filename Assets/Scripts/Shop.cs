@@ -1,7 +1,9 @@
 using UnityEngine;
+using TMPro;
+using System.Drawing;
 
 public class Shop : MonoBehaviour
-{
+{ 
     public TurretBlueprint cannon;
     public TurretBlueprint arrowTower;
     public TurretBlueprint slowingTower;

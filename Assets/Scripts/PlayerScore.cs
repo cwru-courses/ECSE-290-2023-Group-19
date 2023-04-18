@@ -11,6 +11,9 @@ public class PlayerScore : MonoBehaviour
     public int gameDuration;
     public static int playerHealth = 10;
 
+    public TextMeshProUGUI coinsText;
+    public TextMeshProUGUI woodText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,9 @@ public class PlayerScore : MonoBehaviour
     {
         gameDurationText.text = "Game Duration: " + gameDuration.ToString() + "s";
         PlayerHealthText.text = "Your Health: " + playerHealth + "hp";
+
+        coinsText.text = "Coins: " + PlayerStats.totalMoney;
+        woodText.text = "Wood: " + PlayerStats.totalWood;
     }
 
     void updateDuration()
