@@ -62,6 +62,7 @@ public class Trees : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+
             Ray ray = cameraObject.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -87,6 +88,7 @@ public class Trees : MonoBehaviour
                 //cutting down tree
                 else
                 {
+
                     foreach (GameObject tree in trees)
                     {
                         if (Vector3.Distance(tree.transform.position, hit.point) < interactionDistance)

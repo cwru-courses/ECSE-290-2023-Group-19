@@ -1,3 +1,5 @@
+Assets:
+
 1. Grass and road cubes
 https://assetstore.unity.com/packages/3d/environments/fantasy/goblin-cannon-145437
 
@@ -33,3 +35,8 @@ https://assetstore.unity.com/packages/3d/vegetation/trees/polygon-trees-224068
 
 12. UI icons
 https://game-icons.net/
+
+Tutorials:
+1. Professor Fu; CSDS 290 class materials
+
+2. Brackeys; https://www.youtube.com/@Brackeys
