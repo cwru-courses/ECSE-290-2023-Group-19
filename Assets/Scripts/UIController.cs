@@ -6,12 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
-    public Image play;
+    public Image pause;
 
-    void Start()
-    {
-        play.gameObject.SetActive(false);
-    }
     
     //public Image pause;
     public void Exit()
@@ -22,12 +18,12 @@ public class UIController : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0;
-        play.gameObject.SetActive(true);
+        pause.gameObject.SetActive(false);
     }
 
     public void Continue()
     {
         Time.timeScale = 1;
-        play.gameObject.SetActive(false);
+        pause.gameObject.SetActive(true);
     }
 }
