@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlowingEffect : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class SlowingEffect : MonoBehaviour
     private bool slowing;
     public float slowDown_percent;
     public Transform firePoint;
+
+    public float health = 100;
+    private float initialHealth;
+    public Image healthBar;
 
     // The color that the turret will change to
     public Color hoverColor;
@@ -101,6 +106,21 @@ public class SlowingEffect : MonoBehaviour
                 enemy.GetComponent<EnemyMovement>().stopSlowDown(slowDown_percent);
             }
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        healthBar.fillAmount = health / initialHealth;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+
     }
 
     void OnDrawGizmosSelected()

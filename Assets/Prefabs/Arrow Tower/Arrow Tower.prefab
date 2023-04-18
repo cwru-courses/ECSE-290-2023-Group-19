@@ -2856,6 +2856,8 @@ MonoBehaviour:
   rotater: {fileID: 3431121314970168891}
   turnSpeed: 10
   fireRate: 3
+  health: 100
+  healthBar: {fileID: 8764877145707531642}
   ammunitionPrefab: {fileID: 3340237349368317267, guid: 5340689691e165a40a388ef70ccc7bd6, type: 3}
   firePoint: {fileID: 3535840564126299820}
   audioSource: {fileID: 0}

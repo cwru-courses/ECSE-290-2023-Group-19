@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BombExplode : MonoBehaviour
 {
-    public float timeBeforeExploding;
-    public float range;
+    public float timeBeforeExploding = 2.0f;
+    public float range = 3.0f;
     public string enemyTag = "Enemy";
-    public float damage;
+    public float damage = 100.0f;
     public GameObject explodeEffect;
     public AudioSource audioSource;
     // Start is called before the first frame update
