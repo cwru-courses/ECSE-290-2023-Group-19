@@ -27,7 +27,7 @@ public class ShootingTower : MonoBehaviour
     void Start()
     {
         initialHealth = health;
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        InvokeRepeating("UpdateTarget", 0f, 0.2f);
         InvokeRepeating("Decay", 0f, 1f);
     }
 
@@ -54,6 +54,10 @@ public class ShootingTower : MonoBehaviour
         {
             target = nearestEnemy.transform;
             //Debug.Log("change target");
+        }
+        else
+        {
+            target = null;
         }
         
     }
