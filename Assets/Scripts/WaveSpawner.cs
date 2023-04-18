@@ -15,11 +15,11 @@ public class WaveSpawner : MonoBehaviour
 
     public TextMeshProUGUI waveCountDownText;
 
-    private int waveNumber = 1;
+    private int waveNumber = 0;
 
     private void Start()
     {
-        InvokeRepeating("randomSpawnBetweenWaves", 0f, 2f);
+        //InvokeRepeating("randomSpawnBetweenWaves", 0f, 2f);
     }
 
     void Update ()
@@ -33,12 +33,53 @@ public class WaveSpawner : MonoBehaviour
         waveCountDownText.text = "Next Wave Coming: " + Mathf.Round(countDown).ToString() + "s";
     }
 
+    void spawnNormalEnemy()
+    {
+        Instantiate(enemyPrefab, spawnPoint.position + new Vector3(0.0f, -0.5f, 0.0f), spawnPoint.rotation);
+    }
+
+    void spawnDragon()
+    {
+        Instantiate(dragonPrefab, spawnPoint.position + new Vector3(0.0f, -0.5f, 0.0f), spawnPoint.rotation);
+    }
+
+    IEnumerator SpawnWave()
+    {
+        waveNumber++;
+        if (waveNumber < 3)
+        {
+            for (int i = 0; i < waveNumber + 1; i++)
+            {
+                spawnNormalEnemy();
+                yield return new WaitForSeconds(0.3f);
+            }
+        }
+        else if (waveNumber % 5 == 0)
+        {
+            for (int i = 0; i < Random.Range(waveNumber/5 , waveNumber/5 + 2); i++)
+            {
+                spawnDragon();
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < Random.Range(waveNumber, waveNumber + 5); i++)
+            {
+                spawnNormalEnemy();
+                yield return new WaitForSeconds(0.3f);
+            }
+        }
+    }
+
+
+    /*
     void randomSpawnBetweenWaves()
     {
         randomSpawnNormalEnemy();
         randomSpawnDragon();
     }
-
+    
     IEnumerator SpawnWave ()
     {
         waveNumber++;
@@ -76,14 +117,5 @@ public class WaveSpawner : MonoBehaviour
             spawnNormalEnemy();
         }
     }
-
-    void spawnNormalEnemy()
-    {
-        Instantiate(enemyPrefab, spawnPoint.position + new Vector3(0.0f, -0.5f, 0.0f), spawnPoint.rotation);
-    }
-
-    void spawnDragon()
-    {
-        Instantiate(dragonPrefab, spawnPoint.position + new Vector3(0.0f, -0.5f, 0.0f), spawnPoint.rotation);
-    }
+    */
 }
