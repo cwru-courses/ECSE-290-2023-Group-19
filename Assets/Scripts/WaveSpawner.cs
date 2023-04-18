@@ -42,6 +42,11 @@ public class WaveSpawner : MonoBehaviour
         Instantiate(dragonPrefab, spawnPoint.position + new Vector3(0.0f, -0.5f, 0.0f), spawnPoint.rotation);
     }
 
+    void spawnBombEnemy()
+    {
+        Instantiate(bombEnemyPrefab, spawnPoint.position + new Vector3(0.0f, -0.5f, 0.0f), spawnPoint.rotation);
+    }
+
     IEnumerator SpawnWave()
     {
         waveNumber++;
@@ -58,6 +63,14 @@ public class WaveSpawner : MonoBehaviour
             for (int i = 0; i < Random.Range(waveNumber/5 , waveNumber/5 + 2); i++)
             {
                 spawnDragon();
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+        else if (waveNumber % 3 == 0)
+        {
+            for (int i = 0; i < Random.Range(waveNumber / 2, waveNumber / 2 + 3); i++)
+            {
+                spawnBombEnemy();
                 yield return new WaitForSeconds(0.5f);
             }
         }
