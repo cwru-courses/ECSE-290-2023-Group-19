@@ -37,6 +37,6 @@ https://assetstore.unity.com/packages/3d/vegetation/trees/polygon-trees-224068
 https://game-icons.net/
 
 Tutorials:
-1. Professor Fu, CSDS 290 class materials
+1. Professor Fu; CSDS 290 class materials
 
-2. 
+2. Brackeys; https://www.youtube.com/@Brackeys
