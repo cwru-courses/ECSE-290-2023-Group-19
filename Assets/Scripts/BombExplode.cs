@@ -26,10 +26,10 @@ public class BombExplode : MonoBehaviour
     {
         yield return new WaitForSeconds(timeBeforeExploding);
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        createEffect();
+        audioSource.Play();
         foreach (GameObject enemy in enemies)
         {
-            createEffect();
-            audioSource.Play();
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
             if (enemy != null && distanceToEnemy <= range)
             {

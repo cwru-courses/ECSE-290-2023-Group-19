@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657916, g: 0.49641395, b: 0.5748162, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657952, g: 0.49641448, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5990,7 +5990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4644583560905145983, guid: 0500c7f47626ec441b30ee6614f5d2df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5422105868859532485, guid: 0500c7f47626ec441b30ee6614f5d2df, type: 3}
       propertyPath: m_RootOrder
@@ -10848,8 +10848,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8813443147739044124, guid: 3cec2cba1be1c4943a7c5eea3675ad37, type: 3}
-  dragonPrefab: {fileID: 0}
-  bombEnemyPrefab: {fileID: 0}
+  dragonPrefab: {fileID: 274729935443779629, guid: 61208a26822227641bc97db9e30cec9c, type: 3}
+  bombEnemyPrefab: {fileID: 2410227428716968716, guid: e32b1641e81b5aa498d9447e9370df49, type: 3}
   spawnPoint: {fileID: 1729246113}
   timeBetweenWaves: 15
   waveCountDownText: {fileID: 462987627}
@@ -13146,7 +13146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2410227428716968716, guid: e32b1641e81b5aa498d9447e9370df49, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.53
+      value: -11.64
       objectReference: {fileID: 0}
     - target: {fileID: 2410227428716968716, guid: e32b1641e81b5aa498d9447e9370df49, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17325,7 +17325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 129420, guid: d3ef549050e9b0542b4f3c3dd47a1085, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 422446, guid: d3ef549050e9b0542b4f3c3dd47a1085, type: 3}
       propertyPath: m_RootOrder
@@ -18279,7 +18279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8285940201275191969, guid: e3327bdc614dad44998e3311b3ab4794, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8285940201275354753, guid: e3327bdc614dad44998e3311b3ab4794, type: 3}
       propertyPath: m_RootOrder
@@ -20390,7 +20390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8285940201275191969, guid: e3327bdc614dad44998e3311b3ab4794, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8285940201275354753, guid: e3327bdc614dad44998e3311b3ab4794, type: 3}
       propertyPath: m_RootOrder
