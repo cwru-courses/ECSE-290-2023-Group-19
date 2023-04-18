@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657952, g: 0.49641448, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657934, g: 0.4964139, b: 0.5748161, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1692,7 +1692,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166008243}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &166008246
 Camera:
   m_ObjectHideFlags: 0
@@ -10452,7 +10452,7 @@ MonoBehaviour:
   dragonPrefab: {fileID: 274729935443779629, guid: 61208a26822227641bc97db9e30cec9c, type: 3}
   bombEnemyPrefab: {fileID: 0}
   spawnPoint: {fileID: 1729246113}
-  timeBetweenWaves: 20
+  timeBetweenWaves: 15
   waveCountDownText: {fileID: 462987627}
 --- !u!114 &1143164905
 MonoBehaviour:
@@ -14500,7 +14500,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633060828}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &1633060830
 Camera:
   m_ObjectHideFlags: 0
@@ -14573,7 +14573,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.6
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
