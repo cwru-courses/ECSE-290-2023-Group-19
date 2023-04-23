@@ -12,7 +12,7 @@ public class UIController : MonoBehaviour
     //public Image pause;
     public void Exit()
     {
-        Application.Quit();
+        SceneManager.LoadScene("StartScene");
     }
 
     public void Pause()

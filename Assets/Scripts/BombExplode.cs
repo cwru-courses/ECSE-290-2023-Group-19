@@ -10,16 +10,29 @@ public class BombExplode : MonoBehaviour
     public float damage = 100.0f;
     public GameObject explodeEffect;
     public AudioSource audioSource;
+
+    private Renderer rend;
+    private Color startColor;
+    public Color hoverColor;
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("explode");
+        rend = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    // Collect by mouse click
+    private void OnMouseDown()
+    {
+        PlayerStats.totalBomb++;
+        Destroy(gameObject);
     }
 
     IEnumerator explode()
