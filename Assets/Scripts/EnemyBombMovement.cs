@@ -89,7 +89,14 @@ public class EnemyBombMovement : MonoBehaviour
             float distanceToTurret = Vector3.Distance(transform.position, turret.transform.position);
             if (turret != null && distanceToTurret <= detectRange)
             {
-                explode();
+                if (turret.GetComponent<ShootingTower>() != null && turret.GetComponent<ShootingTower>().health > 0)
+                {
+                    explode();
+                }
+                else if (turret.GetComponent<SlowingEffect>() != null && turret.GetComponent<SlowingEffect>().health > 0)
+                {
+                    explode();
+                }
             }
         }
     }
@@ -102,11 +109,11 @@ public class EnemyBombMovement : MonoBehaviour
             float distanceToTurret = Vector3.Distance(transform.position, turret.transform.position);
             if (turret != null && distanceToTurret <= explodeRange)
             {
-                if (turret.GetComponent<ShootingTower>() != null)
+                if (turret.GetComponent<ShootingTower>() != null && turret.GetComponent<ShootingTower>().health > 0)
                 {
                     turret.GetComponent<ShootingTower>().TakeDamage(damage);
                 }
-                else if (turret.GetComponent<SlowingEffect>() != null)
+                else if (turret.GetComponent<SlowingEffect>() != null && turret.GetComponent<SlowingEffect>().health > 0)
                 {
                     turret.GetComponent<SlowingEffect>().TakeDamage(damage);
                 }

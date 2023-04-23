@@ -33,31 +33,35 @@ public class ShootingTower : MonoBehaviour
 
     void UpdateTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-        //Debug.Log(enemies.Length);
-        float shortestDistance = Mathf.Infinity;
-        GameObject nearestEnemy = null;
+        if (health > 0)
+        {
 
-        foreach (GameObject enemy in enemies)
-        {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-//            Debug.Log(enemy.transform.position);
-            if (distanceToEnemy < shortestDistance)
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+            //Debug.Log(enemies.Length);
+            float shortestDistance = Mathf.Infinity;
+            GameObject nearestEnemy = null;
+
+            foreach (GameObject enemy in enemies)
             {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
-                //Debug.Log(nearestEnemy.name);
+                float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+                //            Debug.Log(enemy.transform.position);
+                if (distanceToEnemy < shortestDistance)
+                {
+                    shortestDistance = distanceToEnemy;
+                    nearestEnemy = enemy;
+                    //Debug.Log(nearestEnemy.name);
+                }
             }
-        }
-        //Debug.Log(shortestDistance);
-        if (nearestEnemy != null && shortestDistance <= range)
-        {
-            target = nearestEnemy.transform;
-            //Debug.Log("change target");
-        }
-        else
-        {
-            target = null;
+            //Debug.Log(shortestDistance);
+            if (nearestEnemy != null && shortestDistance <= range)
+            {
+                target = nearestEnemy.transform;
+                //Debug.Log("change target");
+            }
+            else
+            {
+                target = null;
+            }
         }
         
     }

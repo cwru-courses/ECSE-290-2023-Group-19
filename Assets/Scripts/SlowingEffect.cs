@@ -39,7 +39,7 @@ public class SlowingEffect : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (slowing == false)
+        if (slowing == false && health > 0)
         {
             slowing = true;
             InvokeRepeating("UpdateTarget", 0f, 0.05f);
