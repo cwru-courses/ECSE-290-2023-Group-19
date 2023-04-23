@@ -104,7 +104,10 @@ public class ShootingTower : MonoBehaviour
 
     public void Decay()
     {
-        TakeDamage(1.0f);
+        if (health > 0)
+        {
+            TakeDamage(1.0f);
+        }
     }
 
     public void TakeDamage(float damage)
