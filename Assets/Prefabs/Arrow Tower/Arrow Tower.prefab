@@ -2860,7 +2860,7 @@ MonoBehaviour:
   healthBar: {fileID: 8764877145707531642}
   ammunitionPrefab: {fileID: 3340237349368317267, guid: 5340689691e165a40a388ef70ccc7bd6, type: 3}
   firePoint: {fileID: 3535840564126299820}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 549642509827882702}
 --- !u!82 &549642509827882702
 AudioSource:
   m_ObjectHideFlags: 0
