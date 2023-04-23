@@ -10,5 +10,5 @@ What you need to do:
 3. When you decide where to put it, press your mouse down, and the turret will be built there.
 4. Keep building turrets, because your enemy will be more and more!
 5. For Angel statues, you can click them to create a slowing down range effect, and the cooling down is 10s
-6. You can press Tab to switch to open world scene and collect woods by left click them to cut them and then left click again to collect them (they will have usage in next version)
+6. You can press Tab to switch to open world scene. Left click on the trees to cut them and then right click on the wood to collect them.
 7. Fighting for infinity (for now)!

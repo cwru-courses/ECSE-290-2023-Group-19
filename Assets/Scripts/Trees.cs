@@ -60,7 +60,7 @@ public class Trees : MonoBehaviour
             InstantiateGameObject();
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
 
             Ray ray = cameraObject.ScreenPointToRay(Input.mousePosition);
@@ -84,30 +84,36 @@ public class Trees : MonoBehaviour
                         }
                     }
                 }
+            }
+        }
 
-                //cutting down tree
-                else
+        //cutting down tree
+        else if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = cameraObject.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+
+                foreach (GameObject tree in trees)
                 {
-
-                    foreach (GameObject tree in trees)
+                    if (Vector3.Distance(tree.transform.position, hit.point) < interactionDistance)
                     {
-                        if (Vector3.Distance(tree.transform.position, hit.point) < interactionDistance)
+                        int woodCount = Random.Range(1, maxWoodPerTree + 1);
+                        for (int i = 0; i < woodCount; i++)
                         {
-                            int woodCount = Random.Range(1, maxWoodPerTree + 1);
-                            for (int i = 0; i < woodCount; i++)
-                            {
-                                Vector3 woodPosition = tree.transform.position + Vector3.up * (i + 1);
-                                GameObject wood = Instantiate(woodPrefab, woodPosition, Quaternion.identity);
-                                woods.Add(wood);
-                            }
-
-                            trees.Remove(tree);
-                            Destroy(tree);
-                            totalTrees--;
-
-                            Debug.Log("Cut down tree");
-                            break;
+                            Vector3 woodPosition = tree.transform.position + Vector3.up * (i + 1);
+                            GameObject wood = Instantiate(woodPrefab, woodPosition, Quaternion.identity);
+                            woods.Add(wood);
                         }
+
+                        trees.Remove(tree);
+                        Destroy(tree);
+                        totalTrees--;
+
+                        Debug.Log("Cut down tree");
+                        break;
                     }
                 }
             }
