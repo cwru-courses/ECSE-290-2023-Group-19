@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class StartUI : MonoBehaviour
 {
+    public Image ins;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +27,10 @@ public class StartUI : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("MainScene");
+    }
+
+    public void ShowInstructure()
+    {
+        ins.gameObject.SetActive(true);
     }
 }
