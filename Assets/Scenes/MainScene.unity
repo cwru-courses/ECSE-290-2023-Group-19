@@ -10761,7 +10761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startMoney: 400
-  startWood: 0
+  startWood: 10
   startBomb: 0
 --- !u!143 &1143164909
 CharacterController:

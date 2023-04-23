@@ -2784,6 +2784,7 @@ GameObject:
   - component: {fileID: 5422105868859532485}
   - component: {fileID: 4122861261024215854}
   - component: {fileID: 549642509827882702}
+  - component: {fileID: 7767690585355151442}
   m_Layer: 0
   m_Name: Arrow Tower
   m_TagString: Turret
@@ -2861,6 +2862,7 @@ MonoBehaviour:
   ammunitionPrefab: {fileID: 3340237349368317267, guid: 5340689691e165a40a388ef70ccc7bd6, type: 3}
   firePoint: {fileID: 3535840564126299820}
   audioSource: {fileID: 549642509827882702}
+  fixingEffect: {fileID: 3744133877081091469, guid: a2a060732547fe64581bb0cb3c2bdf1d, type: 3}
 --- !u!82 &549642509827882702
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2957,6 +2959,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &7767690585355151442
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4644583560905145983}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7, y: 7, z: 7}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &4646862562427745296
 GameObject:
   m_ObjectHideFlags: 0

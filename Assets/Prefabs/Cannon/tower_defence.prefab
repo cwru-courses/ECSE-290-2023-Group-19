@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 422446}
   - component: {fileID: 1388431127745597399}
   - component: {fileID: 4804454064319786077}
+  - component: {fileID: -7040111603466319754}
   m_Layer: 0
   m_Name: tower_defence
   m_TagString: Turret
@@ -144,6 +145,7 @@ MonoBehaviour:
   ammunitionPrefab: {fileID: 8842346044740314109, guid: 1004d7b1392e2a340aeb5b5a3b1011a1, type: 3}
   firePoint: {fileID: 2208443066075816270}
   audioSource: {fileID: 4804454064319786077}
+  fixingEffect: {fileID: 7155335147208632822, guid: 97c43495f80a3244fad1301dfafbe252, type: 3}
 --- !u!82 &4804454064319786077
 AudioSource:
   m_ObjectHideFlags: 0
@@ -240,6 +242,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &-7040111603466319754
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129420}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9, y: 9, z: 9}
+  m_Center: {x: 0, y: 4, z: 0}
 --- !u!1 &135976
 GameObject:
   m_ObjectHideFlags: 0
