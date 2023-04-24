@@ -1400,7 +1400,21 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: hellooooooo
+  m_text: "1: Remember, your goal is to stop the enemies from exerting the Kingdom,
+    if they do, you will lose health!\r\n2: Build the towers on any grass cubes by
+    clicking the tower you want to build in the shop at the left of the screen and
+    hover your mouse over the grass cube, and then press your left mouse. hint: cannon
+    and angel statues have low shooting range, so place them near by the road! arrow
+    tower has a long shooting range, so place them anywhere you would like to!\r\n3:
+    You need coins to buy towers, and you can collect coins by killing the enemy.\r\n4:
+    Don\u2019t just sit there watching your tower shooting! Every turret has a health
+    and a constant decay, so they will die! They are gonna stop shooting after they
+    run out of health!\r\n5: To repair towers, press the \u201CTab\u201D key on your
+    keyboard, you will go to the open world (same key to come back). Press WASD to
+    walk around, left mouse click to cut the tree, and right click to collect the
+    wood pieces!\r\n6: After having wood pieces, hover your mouse over the tower
+    you want to repair, and right click!\r\n7: Angel tower can slow down enemies
+    in a range with 10s cooling down, hover your mouse over them and left click!\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1427,13 +1441,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 4
-  m_fontSizeBase: 4
+  m_fontSize: 3
+  m_fontSizeBase: 3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
