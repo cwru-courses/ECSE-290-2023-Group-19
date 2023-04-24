@@ -8,6 +8,7 @@ public class BuildManager : MonoBehaviour
 
     public static BuildManager instance;
     private TurretBlueprint turretToBuild;
+    private BombBlueprint bombToBuild;
 
     void Awake()
     {
@@ -44,22 +45,21 @@ public class BuildManager : MonoBehaviour
        
     }
 
-    // SEEEEEEEEEEEE here !!!!!!!!!!!!!!!!!!! @Lara
-    public void BuildPropOn(EnemyPathNode node)       // this type here is revised
+    public void BuildPropOn(EnemyPathNode node)
     {
-        if (PlayerStats.totalMoney < turretToBuild.cost)
+        if (PlayerStats.totalBomb < bombToBuild.bombs)
         {
-            Debug.Log("Not Enough Money");
+            Debug.Log("Not Enough Bombs");
         }
 
         else
         {
-            PlayerStats.totalMoney -= turretToBuild.cost;
-            // else we build a turret
-            GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
-            node.prop = turret;
+            PlayerStats.totalBomb -= bombToBuild.bombs;
+            // else we build the bomb
+            GameObject bombDown = (GameObject)Instantiate(bombToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+            node.prop = bombDown;
 
-            Debug.Log("Money left: " + PlayerStats.totalMoney);
+            Debug.Log("Bombs left: " + PlayerStats.totalBomb);
         }
 
     }
@@ -67,5 +67,10 @@ public class BuildManager : MonoBehaviour
     public void SelectTurretoBuild(TurretBlueprint turret)
     {
         turretToBuild = turret;
+    }
+
+    public void SelectBombtoBuild(BombBlueprint bomb)
+    {
+        bombToBuild = bomb;
     }
 }

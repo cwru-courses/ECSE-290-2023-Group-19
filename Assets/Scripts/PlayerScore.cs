@@ -15,6 +15,7 @@ public class PlayerScore : MonoBehaviour
 
     public TextMeshProUGUI coinsText;
     public TextMeshProUGUI woodText;
+    public TextMeshProUGUI bombText;
 
     public TextMeshProUGUI endTimeText;
     public Image gameOver;
@@ -43,6 +44,7 @@ public class PlayerScore : MonoBehaviour
 
         coinsText.text = "Coins: " + PlayerStats.totalMoney;
         woodText.text = "Wood: " + PlayerStats.totalWood;
+        bombText.text = "Bombs: " + PlayerStats.totalBomb;
     }
 
     void updateDuration()
