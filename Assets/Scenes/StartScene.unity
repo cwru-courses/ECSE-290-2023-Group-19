@@ -469,7 +469,11 @@ MonoBehaviour:
     left mouse click to cut the tree, and right click to collect the wood pieces!\r\n6:
     After having wood pieces, hover your mouse over the tower you want to repair,
     and right click!\r\n7: Angel tower can slow down enemies in a range with 10s
-    cooling down, hover your mouse over them and left click!\r\n"
+    cooling down, hover your mouse over them and left click!\r\n8: After you kill
+    the bomb enemy, they will be turned into a black bomb on the ground and explode
+    after 2 seconds. You can collect them by clicking them, and they will be shown
+    in the shop. You can place them in the scene afterwards by simply clicking them
+    in the shop and placing them on the road.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
