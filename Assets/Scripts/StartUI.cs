@@ -29,8 +29,13 @@ public class StartUI : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
-    public void ShowInstructure()
+    public void ShowInstruction()
     {
         ins.gameObject.SetActive(true);
+    }
+
+    public void CloseInstruction()
+    {
+        ins.gameObject.SetActive(false);
     }
 }
