@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerScore : MonoBehaviour
 {
@@ -15,9 +16,15 @@ public class PlayerScore : MonoBehaviour
     public TextMeshProUGUI coinsText;
     public TextMeshProUGUI woodText;
 
+    public TextMeshProUGUI endTimeText;
+    public Image gameOver;
+    private bool gameIsOver;
+
     // Start is called before the first frame update
     void Start()
     {
+        playerHealth = 10;
+        gameIsOver = false;
         EnemyReachedDesti = 0;
         InvokeRepeating("updateDuration", 0f, 1f);
     }
@@ -29,7 +36,9 @@ public class PlayerScore : MonoBehaviour
         PlayerHealthText.text = "Your Health: " + playerHealth + "hp";
         if (playerHealth <= 0)
         {
-            SceneManager.LoadScene("GameOver");
+            //SceneManager.LoadScene("GameOver");
+            GameOver();
+            gameIsOver = true;
         }
 
         coinsText.text = "Coins: " + PlayerStats.totalMoney;
@@ -44,5 +53,12 @@ public class PlayerScore : MonoBehaviour
     public static void takeDamage(int damage)
     {
         playerHealth -= damage;
+    }
+
+    void GameOver()
+    {
+        if (!gameIsOver)
+            endTimeText.text = "Game Duration: " + gameDuration.ToString() + "s";
+        gameOver.gameObject.SetActive(true);
     }
 }

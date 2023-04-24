@@ -26,4 +26,11 @@ public class UIController : MonoBehaviour
         Time.timeScale = 1;
         pause.gameObject.SetActive(true);
     }
+
+    public void Restart()
+    {
+        
+        SceneManager.LoadScene("MainScene");
+
+    }
 }
