@@ -39,7 +39,7 @@ public class SlowingEffect : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (slowing == false && health > 0)
+        if (slowing == false && health > 10)
         {
             slowing = true;
             InvokeRepeating("UpdateTarget", 0f, 0.05f);
@@ -105,7 +105,7 @@ public class SlowingEffect : MonoBehaviour
 
     public void Decay()
     {
-        if (health > 0)
+        if (health > 10)
         {
             TakeDamage(1.0f);
         }

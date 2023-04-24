@@ -61,7 +61,7 @@ public class ShootingTower : MonoBehaviour
 
     void UpdateTarget()
     {
-        if (health > 0)
+        if (health > 10)
         {
 
             GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
@@ -90,6 +90,10 @@ public class ShootingTower : MonoBehaviour
             {
                 target = null;
             }
+        }
+        else
+        {
+            target = null;
         }
         
     }
@@ -132,7 +136,7 @@ public class ShootingTower : MonoBehaviour
 
     public void Decay()
     {
-        if (health > 0)
+        if (health > 10)
         {
             TakeDamage(1.0f);
         }
