@@ -7,7 +7,7 @@ public class Shop : MonoBehaviour
     public TurretBlueprint cannon;
     public TurretBlueprint arrowTower;
     public TurretBlueprint slowingTower;
-    public BombBlueprint bomb;
+    public TurretBlueprint bomb;
     BuildManager buildManager;
 
    public void SelectCannon()
@@ -31,7 +31,7 @@ public class Shop : MonoBehaviour
     public void SelectBomb()
     {
         Debug.Log("BombSelected");
-        buildManager.SelectBombtoBuild(bomb);
+        buildManager.SelectTurretoBuild(bomb);
     }
 
     // Start is called before the first frame update

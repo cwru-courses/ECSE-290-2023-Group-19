@@ -10,6 +10,10 @@ public class Trees : MonoBehaviour
     public GameObject treePrefab;
     public float scaleX = 50;
     public float scaleZ = 35;
+
+    public float Xoffset = 5;
+    public float Zoffset = 5;
+
     private float environmentPositionX;
     private float environmentPositionZ;
 
@@ -36,15 +40,15 @@ public class Trees : MonoBehaviour
 
     void InstantiateGameObject()
     {
-        Vector3 locationOfTree = new Vector3(Random.Range(environmentPositionX, environmentPositionX + scaleX), 0,
-            Random.Range(environmentPositionZ, environmentPositionZ + scaleZ));
+            Vector3 locationOfTree = new Vector3(Random.Range(environmentPositionX + Xoffset, environmentPositionX + scaleX), 0,
+            Random.Range(environmentPositionZ + Zoffset, environmentPositionZ + scaleZ));
 
         float distance = 1.0f; // the distance to cast the ray
         int layerMask = LayerMask.GetMask("Default"); // the layer(s) to check for collisions
 
         if (Physics.Raycast(locationOfTree, Vector3.down, out RaycastHit hit, distance, layerMask))
         {
-            locationOfTree.y = hit.point.y + 0.1f; // set the y-coordinate slightly above the ground
+            locationOfTree.y = hit.point.y;
             GameObject tree = Instantiate(treePrefab, locationOfTree, Quaternion.identity);
             trees.Add(tree);
             totalTrees++;
