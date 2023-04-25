@@ -5909,6 +5909,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1595214935}
     m_Modifications:
+    - target: {fileID: 7627878295300566993, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627878295300566998, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -91
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627878295300566999, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
+      propertyPath: m_text
+      value: 300 Coins
+      objectReference: {fileID: 0}
     - target: {fileID: 7627878295672049697, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -16654,6 +16666,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1595214935}
     m_Modifications:
+    - target: {fileID: 7627878295300566993, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627878295300566998, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -89
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627878295300566999, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
+      propertyPath: m_text
+      value: 100 Coins
+      objectReference: {fileID: 0}
     - target: {fileID: 7627878295672049697, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -18209,19 +18233,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n5: To repair towers, press the \u201CTab\u201D key on your keyboard,
-    you will go to the open world (same key to come back). Press WASD to walk around,
-    left mouse click to cut the tree, and right click to collect the wood pieces!\r\n6:
-    After having wood pieces, hover your mouse over the tower you want to repair,
-    and right click!\r\n7: Angel tower can slow down enemies in a range with 10s
-    cooling down, hover your mouse over them and left click!\r\n8: After you kill
-    the bomb enemy, they will be turned into a black bomb on the ground and explode
-    after 2 seconds. You can collect them by clicking them, and they will be shown
-    in the shop. You can place them in the scene afterwards by simply clicking them
-    in the shop and placing them on the road.\n"
+  m_text: '
+
+    6: Right click the turret to fix them using wood pieces.
+
+    7:
+    Left click the Angel Tower to release the slowing effect, but it has 10s cooling
+    down.
+
+    8: Kill the bomb enemy and they turn into a black bomb. Wait 2 seconds
+    and it explodes. Collect it by clicking and it appears in the shop. Click it
+    in the shop to place it on the road.
+
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18245,8 +18273,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3.6
-  m_fontSizeBase: 3.6
+  m_fontSize: 4.5
+  m_fontSizeBase: 4.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -18257,7 +18285,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 7
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -24952,19 +24980,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1: Remember, your goal is to stop the enemies from exerting the Kingdom,
-    if they do, you will lose health!\r\n2: Build the towers on any grass cubes by
-    clicking the tower you want to build in the shop at the left of the screen and
-    hover your mouse over the grass cube, and then press your left mouse. hint: cannon
-    and angel statues have low shooting range, so place them near by the road! arrow
-    tower has a long shooting range, so place them anywhere you would like to!\r\n3:
-    You need coins to buy towers, and you can collect coins by killing the enemy.\r\n4:
-    Don\u2019t just sit there watching your tower shooting! Every turret has a health
-    and a constant decay, so they will die! They are gonna stop shooting after they
-    run out of health!\r\n\n"
+  m_text: "1: Your goal is to stop the enemies from entering the Kingdom!\r\n2: Click
+    on the turret in the shop on the left and place them on the lawn where you want
+    to put them.\r\n3: You need coins to buy towers, and you can collect coins by
+    killing the enemy.\r\n4: Your turrets will decay constantly, and will stop shooting
+    after health < 0.\r\n5: Press the \u201CTab\u201D key on your keyboard, you will
+    go to the open world (same key to come back). Press WASD to walk around, left
+    mouse click to cut the tree, and right click to collect the wood pieces!\r\n\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -24988,8 +25013,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3.6
-  m_fontSizeBase: 3.6
+  m_fontSize: 4.5
+  m_fontSizeBase: 4.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -25000,7 +25025,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 7
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -27629,6 +27654,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1595214935}
     m_Modifications:
+    - target: {fileID: 7627878295300566993, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627878295300566998, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -87
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627878295300566999, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
+      propertyPath: m_text
+      value: 50 Coins
+      objectReference: {fileID: 0}
     - target: {fileID: 7627878295672049697, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
