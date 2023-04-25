@@ -16,7 +16,6 @@ public class EnemyMovement : MonoBehaviour
     public Image healthBar;
     public bool isSlowDown = false;
     public int damageToPlayerHealth = 1;
-    
 
     // Start is called before the first frame update
     void Start()

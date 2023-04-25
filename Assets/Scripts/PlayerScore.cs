@@ -9,9 +9,9 @@ public class PlayerScore : MonoBehaviour
 {
     public static int EnemyReachedDesti;
     public TextMeshProUGUI gameDurationText;
-    public TextMeshProUGUI PlayerHealthText;
+    public Image healthBar;
     public int gameDuration;
-    public static int playerHealth = 10;
+    public static float playerHealth = 10;
 
     public TextMeshProUGUI coinsText;
     public TextMeshProUGUI woodText;
@@ -33,8 +33,8 @@ public class PlayerScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthBar.fillAmount = playerHealth / 10;
         gameDurationText.text = "Game Duration: " + gameDuration.ToString() + "s";
-        PlayerHealthText.text = "Your Health: " + playerHealth + "hp";
         if (playerHealth <= 0)
         {
             //SceneManager.LoadScene("GameOver");
