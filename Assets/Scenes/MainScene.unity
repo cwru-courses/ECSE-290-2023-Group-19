@@ -19354,19 +19354,15 @@ MonoBehaviour:
   cannon:
     prefab: {fileID: 129420, guid: d3ef549050e9b0542b4f3c3dd47a1085, type: 3}
     cost: 50
-    bombs: 0
   arrowTower:
     prefab: {fileID: 4644583560905145983, guid: 0500c7f47626ec441b30ee6614f5d2df, type: 3}
     cost: 100
-    bombs: 0
   slowingTower:
     prefab: {fileID: 8285940201275191969, guid: e3327bdc614dad44998e3311b3ab4794, type: 3}
     cost: 300
-    bombs: 0
   bomb:
     prefab: {fileID: 5247317216798098025, guid: d7f70251ea71f4044958b82a1f97a903, type: 3}
     cost: 0
-    bombs: 1
 --- !u!1 &1595297241 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6315365442299300530, guid: 2c108acfd17e1b748a234dedb132cadc, type: 3}

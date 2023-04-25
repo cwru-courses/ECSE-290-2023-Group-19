@@ -8,6 +8,7 @@ public class BuildManager : MonoBehaviour
 
     public static BuildManager instance;
     private TurretBlueprint turretToBuild;
+    private BombBlueprint bombToBuild;
 
     void Awake()
     {
@@ -23,7 +24,9 @@ public class BuildManager : MonoBehaviour
 
     }
 
-    public bool CanBuild { get { return turretToBuild != null; } }
+    public bool CanBuildTurret { get { return turretToBuild != null; } }
+
+    public bool CanBuildProp { get { return bombToBuild != null; } }
 
     public void BuildTurretOn(Node node)
     {
@@ -46,16 +49,16 @@ public class BuildManager : MonoBehaviour
 
     public void BuildPropOn(EnemyPathNode node)
     {
-        if (PlayerStats.totalBomb < turretToBuild.bombs)
+        if (PlayerStats.totalBomb < bombToBuild.bombs)
         {
             Debug.Log("Not Enough Bombs");
         }
 
         else
         {
-            PlayerStats.totalBomb -= turretToBuild.bombs;
+            PlayerStats.totalBomb -= bombToBuild.bombs;
             // else we build the bomb
-            GameObject bombDown = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+            GameObject bombDown = (GameObject)Instantiate(bombToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
             node.prop = bombDown;
 
             Debug.Log("Bombs left: " + PlayerStats.totalBomb);
@@ -67,4 +70,11 @@ public class BuildManager : MonoBehaviour
     {
         turretToBuild = turret;
     }
+
+    public void SelectBombtoBuild(BombBlueprint bomb)
+    {
+        bombToBuild = bomb;
+    }
+
+    
 }

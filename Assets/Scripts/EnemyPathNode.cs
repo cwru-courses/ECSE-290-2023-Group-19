@@ -37,7 +37,7 @@ public class EnemyPathNode : MonoBehaviour
             return;
         }
 
-        if (!buildManager.CanBuild)
+        if (!buildManager.CanBuildProp)
         {
             return;
         }
@@ -62,7 +62,7 @@ public class EnemyPathNode : MonoBehaviour
             return;
         }
 
-        if (!buildManager.CanBuild)
+        if (!buildManager.CanBuildProp)
         {
             return;
         }
