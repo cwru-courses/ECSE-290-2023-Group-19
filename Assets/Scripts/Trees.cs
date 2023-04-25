@@ -26,12 +26,10 @@ public class Trees : MonoBehaviour
     private List<GameObject> trees = new List<GameObject>();
     private List<GameObject> woods = new List<GameObject>();
 
-    public Animation knightAnimation;
     public float delayTime = 1.0f;
 
     void Start()
     {
-        knightAnimation = GetComponent<Animation>();
         environmentPositionX = target.position.x;
         environmentPositionZ = target.position.z;
 
@@ -98,7 +96,6 @@ public class Trees : MonoBehaviour
         //cutting down tree
         else if (Input.GetMouseButtonDown(0))
         {
-            StartCoroutine(DelayedAnimation(delayTime));
             Ray ray = cameraObject.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -135,14 +132,5 @@ public class Trees : MonoBehaviour
                 }
             }
         }
-    }
-
-    IEnumerator DelayedAnimation(float delay)
-    {
-        // Wait for the specified delay time
-        yield return new WaitForSeconds(delay);
-
-        // Trigger the animation here
-        knightAnimation.Play("knight movement");
     }
 }
