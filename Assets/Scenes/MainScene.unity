@@ -10371,7 +10371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 166008247}
   moveSpeed: 10
-  rotSpeed: 2
+  rotSpeed: 1
   gravity: -9.8
   terminalVelocity: -20
 --- !u!1 &844434388 stripped
