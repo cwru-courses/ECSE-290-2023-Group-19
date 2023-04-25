@@ -1072,7 +1072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8c5196aefbcb9445fb7c2e280a67ac5f, type: 3}
       propertyPath: m_Name
-      value: Knight D Pelegrini@Idle
+      value: Knight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c5196aefbcb9445fb7c2e280a67ac5f, type: 3}
@@ -10345,23 +10345,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   gravity: -9.8
---- !u!114 &836011592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 836011585}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99a0d9d31216487381a872b73c5e287, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axes: 1
-  sensitivityHor: 2
-  sensitivityVert: 2
-  minimumVert: -45
-  maximumVert: 45
 --- !u!114 &836011593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10376,7 +10359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 166008247}
   moveSpeed: 10
-  rotSpeed: 15
+  rotSpeed: 2
   gravity: -9.8
   terminalVelocity: -20
 --- !u!1 &844434388 stripped
@@ -21158,7 +21141,7 @@ MonoBehaviour:
   Xoffset: 5
   Zoffset: 5
   treeCount: 75
-  interactionDistance: 2
+  interactionDistance: 0.9
   maxWoodPerTree: 2
   woodPrefab: {fileID: 6604790417187696603, guid: 63a41ff51baa285678539abba629f286, type: 3}
 --- !u!1001 &1644826922
