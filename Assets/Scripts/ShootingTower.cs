@@ -23,6 +23,7 @@ public class ShootingTower : MonoBehaviour
     public Transform firePoint;
     public AudioSource audioSource;
     public GameObject fixingEffect;
+    public AudioSource fixingSound;
 
     // Start is called before the first frame update
     void Start()
@@ -32,25 +33,30 @@ public class ShootingTower : MonoBehaviour
         InvokeRepeating("Decay", 0f, 1f);
     }
 
-    private void OnMouseDown()
+
+    private void OnMouseOver()
     {
-        if (PlayerStats.totalWood >= 1)
+        if (Input.GetMouseButtonDown(1))
         {
-            if (health <= 50)
+            if (PlayerStats.totalWood >= 1)
             {
-                health += 50;
+                if (health <= 50)
+                {
+                    health += 50;
+                }
+                else
+                {
+                    health = 100;
+                }
+                PlayerStats.totalWood -= 1;
+                createEffect();
+                fixingSound.Play();
+                Debug.Log("fixed");
             }
             else
             {
-                health = 100;
+                Debug.Log("Not enough wood");
             }
-            PlayerStats.totalWood -= 1;
-            createEffect();
-            Debug.Log("fixed");
-        }
-        else
-        {
-            Debug.Log("Not enough wood");
         }
     }
     void createEffect()
@@ -119,6 +125,7 @@ public class ShootingTower : MonoBehaviour
             fireCountdown = 1f / fireRate;
         }
         fireCountdown -= Time.deltaTime;
+
     }
 
     void Shoot()

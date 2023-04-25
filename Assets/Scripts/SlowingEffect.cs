@@ -14,6 +14,7 @@ public class SlowingEffect : MonoBehaviour
     public float cd = 10f;
 
     public GameObject slowingEffect;
+    public GameObject fixingEffect;
     private bool slowing;
     public float slowDown_percent;
     public Transform firePoint;
@@ -27,6 +28,7 @@ public class SlowingEffect : MonoBehaviour
     private Color startColor;
     private Renderer rend;
     public AudioSource audioSource;
+    public AudioSource fixingSound;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class SlowingEffect : MonoBehaviour
         InvokeRepeating("Decay", 0f, 1f);
     }
 
+    /* deprecated
     private void OnMouseDown()
     {
         if (slowing == false && health > 10)
@@ -45,6 +48,44 @@ public class SlowingEffect : MonoBehaviour
             InvokeRepeating("UpdateTarget", 0f, 0.05f);
             createEffect();
             StartCoroutine("startDetection");
+        }
+    }
+    */
+
+    // to fix
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (PlayerStats.totalWood >= 1)
+            {
+                if (health <= 50)
+                {
+                    health += 50;
+                }
+                else
+                {
+                    health = 100;
+                }
+                PlayerStats.totalWood -= 1;
+                createFixEffect();
+                fixingSound.Play();
+                Debug.Log("fixed");
+            }
+            else
+            {
+                Debug.Log("Not enough wood");
+            }
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            if (slowing == false && health > 10)
+            {
+                slowing = true;
+                InvokeRepeating("UpdateTarget", 0f, 0.05f);
+                createEffect();
+                StartCoroutine("startDetection");
+            }
         }
     }
 
@@ -87,6 +128,12 @@ public class SlowingEffect : MonoBehaviour
     {
         GameObject slowEffect = (GameObject)Instantiate(slowingEffect, firePoint.position, firePoint.rotation);
         Destroy(slowEffect, 4f);
+    }
+
+    void createFixEffect()
+    {
+        GameObject fixEffect = (GameObject)Instantiate(fixingEffect, transform.position + new Vector3(0f, 0.04f, 0f), transform.rotation);
+        Destroy(fixEffect, 4f);
     }
 
     void endEffect()
@@ -134,7 +181,7 @@ public class SlowingEffect : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (slowing == false)
+        if (slowing == false && health >= 10)
         {
             rend.material.color = hoverColor;
         }
