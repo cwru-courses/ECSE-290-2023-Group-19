@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class SlowingEffect : MonoBehaviour
 {
+            //Attack range indicator
+    public Sprite circleSprite;
+    private GameObject attackRangeIndicator;
     private Transform target;
     public float range = 5f;
 
@@ -55,6 +58,11 @@ public class SlowingEffect : MonoBehaviour
     // to fix
     private void OnMouseOver()
     {
+            //when mouse on it, create an indicator
+                 if (attackRangeIndicator == null)
+        {
+            attackRangeIndicator = CreateAttackRangeIndicator();
+        }
         if (Input.GetMouseButtonDown(1))
         {
             if (PlayerStats.totalWood >= 1)
@@ -88,7 +96,23 @@ public class SlowingEffect : MonoBehaviour
             }
         }
     }
+    private GameObject CreateAttackRangeIndicator()
+    {
+        GameObject indicator = new GameObject("AttackRangeIndicator");
+        indicator.transform.SetParent(transform);
+        indicator.transform.position = transform.position;
+        indicator.transform.rotation = Quaternion.Euler(90, 0, 0);
+        indicator.transform.position += Vector3.up * 0.1f;
+        float indicatorScale = range * 2;
+        indicator.transform.localScale = new Vector3(indicatorScale, indicatorScale, 1);
 
+        SpriteRenderer spriteRenderer = indicator.AddComponent<SpriteRenderer>();
+        spriteRenderer.sprite = circleSprite;
+        spriteRenderer.color = Color.red;
+        spriteRenderer.sortingOrder = -1; // Set the sorting order to make sure it's rendered below the tower
+
+        return indicator;
+    }
     IEnumerator startDetection()
     {
         rend.material.color = startColor;
@@ -190,5 +214,9 @@ public class SlowingEffect : MonoBehaviour
     void OnMouseExit()
     {
         rend.material.color = startColor;
+                if (attackRangeIndicator != null)
+        {
+            Destroy(attackRangeIndicator);
+        }
     }
 }
