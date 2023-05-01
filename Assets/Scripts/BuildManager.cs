@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
+using TMPro;
 
 public class BuildManager : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class BuildManager : MonoBehaviour
     public static BuildManager instance;
     private TurretBlueprint turretToBuild;
     private BombBlueprint bombToBuild;
+    public TextMeshProUGUI CoinsAlert;
 
     void Awake()
     {
@@ -21,7 +24,7 @@ public class BuildManager : MonoBehaviour
 
     void Start()
     {
-
+        
     }
 
     public bool CanBuildTurret { get { return turretToBuild != null; } }
@@ -33,6 +36,7 @@ public class BuildManager : MonoBehaviour
         if (PlayerStats.totalMoney < turretToBuild.cost)
         {
             Debug.Log("Not Enough Money");
+            StartCoroutine(ShowAndHideCoinsAlert());
         }
 
         else
@@ -45,6 +49,16 @@ public class BuildManager : MonoBehaviour
             Debug.Log("Money left: " + PlayerStats.totalMoney);
         }
        
+    }
+    IEnumerator ShowAndHideCoinsAlert()
+    {
+        // show the text object
+        CoinsAlert.gameObject.SetActive(true);
+        Debug.Log(1);
+        // wait for three seconds
+        yield return new WaitForSeconds(2f);
+        // hide the text object
+        CoinsAlert.gameObject.SetActive(false);
     }
 
     public void BuildPropOn(EnemyPathNode node)
