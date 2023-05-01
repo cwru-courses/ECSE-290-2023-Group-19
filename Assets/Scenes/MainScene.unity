@@ -14575,6 +14575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoinsAlert: {fileID: 128478080}
+  WoodsAlert: {fileID: 0}
 --- !u!114 &1143164906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20998,7 +20999,7 @@ MonoBehaviour:
     cost: 300
   bomb:
     prefab: {fileID: 5247317216798098025, guid: d7f70251ea71f4044958b82a1f97a903, type: 3}
-    bombs: 0
+    bombs: 1
   cannoninfo: {fileID: 1129955650}
   arrowinfo: {fileID: 53677528}
   slowinfo: {fileID: 1619794742}
@@ -28682,11 +28683,23 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7627878295672049697, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627878295672049697, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1595214940}
     - target: {fileID: 7627878295672049697, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: ae8a55dd3b3787d43801bfb613538d4c, type: 3}
+    - target: {fileID: 7627878295672049697, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627878295672049697, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7627878295672049697, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
@@ -28695,6 +28708,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7627878295672049697, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627878295672049697, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: Shop, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7627878295672049697, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}

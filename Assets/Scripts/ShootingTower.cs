@@ -30,7 +30,7 @@ public class ShootingTower : MonoBehaviour
     public GameObject fixingEffect;
     public AudioSource fixingSound;
 
-    //public TextMeshProUGUI WoodsAlert;
+    BuildManager buildManager;
 
     // Start is called before the first frame update
     void Start()
@@ -38,21 +38,7 @@ public class ShootingTower : MonoBehaviour
         initialHealth = health;
         InvokeRepeating("UpdateTarget", 0f, 0.2f);
         InvokeRepeating("Decay", 0f, 1f);
-
-        /*
-        GameObject textObject = new GameObject("MyTextMeshPro");
-        TextMeshProUGUI text = textObject.AddComponent<TextMeshProUGUI>();
-        text.fontSize = 36;
-        text.text = "Not enough Wood";
-        text.alignment = TextAlignmentOptions.Center;
-        text.color = Color.white;
-        RectTransform rectTransform = text.GetComponent<RectTransform>();
-        rectTransform.SetParent(transform);  // Assign the parent to the Canvas
-        rectTransform.anchorMin = Vector2.zero;
-        rectTransform.anchorMax = Vector2.one;
-        rectTransform.anchoredPosition = Vector2.zero;  // Set to the center of the Canvas
-        rectTransform.sizeDelta = Vector2.zero;
-        */
+        buildManager = BuildManager.FindObjectOfType<BuildManager>();
     }
 
 
@@ -82,23 +68,11 @@ public class ShootingTower : MonoBehaviour
             else
             {
                 Debug.Log("Not enough wood");
-                //StartCoroutine(ShowAndHideWoodsAlert());
+                StartCoroutine(buildManager.ShowAndHideWoodsAlert());
             }
         }
     }
 
-    /*
-    IEnumerator ShowAndHideWoodsAlert()
-    {
-        // show the text object
-        WoodsAlert.gameObject.SetActive(true);
-        Debug.Log(1);
-        // wait for three seconds
-        yield return new WaitForSeconds(2f);
-        // hide the text object
-        WoodsAlert.gameObject.SetActive(false);
-    }
-    */
 
     private void OnMouseExit()
     {

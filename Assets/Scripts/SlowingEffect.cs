@@ -33,6 +33,7 @@ public class SlowingEffect : MonoBehaviour
     public AudioSource audioSource;
     public AudioSource fixingSound;
 
+    BuildManager buildManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +84,7 @@ public class SlowingEffect : MonoBehaviour
             else
             {
                 Debug.Log("Not enough wood");
+                StartCoroutine(buildManager.ShowAndHideWoodsAlert());
             }
         }
         else if (Input.GetMouseButtonDown(0))
