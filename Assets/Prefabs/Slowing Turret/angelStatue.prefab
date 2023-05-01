@@ -283,6 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa92ef47cc4d0234c97c0a4730fd4533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  circleSprite: {fileID: 21300000, guid: 61bd36fef4919584ab8e24ff4cb38055, type: 3}
   range: 5
   enemyTag: Enemy
   fireRate: 1

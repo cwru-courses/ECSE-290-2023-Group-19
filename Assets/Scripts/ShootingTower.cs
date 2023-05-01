@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class ShootingTower : MonoBehaviour
 {
+        //Attack range indicator
+    public Sprite circleSprite;
+    private GameObject attackRangeIndicator;
+
     private Transform target;
     public float range = 5f;
 
@@ -36,6 +40,10 @@ public class ShootingTower : MonoBehaviour
 
     private void OnMouseOver()
     {
+         if (attackRangeIndicator == null)
+        {
+            attackRangeIndicator = CreateAttackRangeIndicator();
+        }
         if (Input.GetMouseButtonDown(1))
         {
             if (PlayerStats.totalWood >= 1)
@@ -59,6 +67,33 @@ public class ShootingTower : MonoBehaviour
             }
         }
     }
+    private void OnMouseExit()
+    {
+        if (attackRangeIndicator != null)
+        {
+            Destroy(attackRangeIndicator);
+        }
+    }
+
+
+    private GameObject CreateAttackRangeIndicator()
+    {
+        GameObject indicator = new GameObject("AttackRangeIndicator");
+        indicator.transform.SetParent(transform);
+        indicator.transform.position = transform.position;
+        indicator.transform.rotation = Quaternion.Euler(90, 0, 0);
+        indicator.transform.position += Vector3.up * 0.1f;
+        float indicatorScale = range * 2;
+        indicator.transform.localScale = new Vector3(indicatorScale, indicatorScale, 1);
+
+        SpriteRenderer spriteRenderer = indicator.AddComponent<SpriteRenderer>();
+        spriteRenderer.sprite = circleSprite;
+        spriteRenderer.color = Color.red;
+        spriteRenderer.sortingOrder = -1; // Set the sorting order to make sure it's rendered below the tower
+
+        return indicator;
+    }
+
     void createEffect()
     {
         GameObject fixEffect = (GameObject)Instantiate(fixingEffect, transform.position + new Vector3(0f, 0.04f, 0f), transform.rotation);

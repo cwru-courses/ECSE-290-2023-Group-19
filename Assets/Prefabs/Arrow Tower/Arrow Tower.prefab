@@ -2853,6 +2853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8a55dd3b3787d43801bfb613538d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  circleSprite: {fileID: 21300000, guid: a62e7412b4f36f748a205c09eaf387be, type: 3}
   range: 10
   enemyTag: Enemy
   rotater: {fileID: 3431121314970168891}

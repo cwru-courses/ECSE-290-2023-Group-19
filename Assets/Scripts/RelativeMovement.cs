@@ -16,7 +16,7 @@ public class RelativeMovement : MonoBehaviour
     private PlayerCharacter playerCharacter;
 
     public float moveSpeed = 10.0f;
-    public float rotSpeed = 15.0f;
+    public float rotSpeed = 15f;
    // public float jumpSpeed = 25.0f;
     public float gravity = -9.8f;
     public float terminalVelocity = -20.0f;

@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8a55dd3b3787d43801bfb613538d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  circleSprite: {fileID: 21300000, guid: 0fee637c2b7c7d04d8af224769402bc5, type: 3}
   range: 5
   enemyTag: Enemy
   rotater: {fileID: 487344}
