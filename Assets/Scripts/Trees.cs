@@ -45,7 +45,7 @@ public class Trees : MonoBehaviour
             Vector3 locationOfTree = new Vector3(Random.Range(environmentPositionX + Xoffset, environmentPositionX + scaleX), 0,
             Random.Range(environmentPositionZ + Zoffset, environmentPositionZ + scaleZ));
 
-        float distance = 1.0f; // the distance to cast the ray
+        float distance = 2f; // the distance to cast the ray
         int layerMask = LayerMask.GetMask("Default"); // the layer(s) to check for collisions
 
         if (Physics.Raycast(locationOfTree, Vector3.down, out RaycastHit hit, distance, layerMask))
