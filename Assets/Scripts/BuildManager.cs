@@ -12,6 +12,7 @@ public class BuildManager : MonoBehaviour
     private TurretBlueprint turretToBuild;
     private BombBlueprint bombToBuild;
     public TextMeshProUGUI CoinsAlert;
+    public TextMeshProUGUI WoodsAlert;
 
     void Awake()
     {
@@ -50,6 +51,7 @@ public class BuildManager : MonoBehaviour
         }
        
     }
+
     IEnumerator ShowAndHideCoinsAlert()
     {
         // show the text object
@@ -59,6 +61,17 @@ public class BuildManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         // hide the text object
         CoinsAlert.gameObject.SetActive(false);
+    }
+
+    public IEnumerator ShowAndHideWoodsAlert()
+    {
+        // show the text object
+        WoodsAlert.gameObject.SetActive(true);
+        Debug.Log(1);
+        // wait for three seconds
+        yield return new WaitForSeconds(2f);
+        // hide the text object
+        WoodsAlert.gameObject.SetActive(false);
     }
 
     public void BuildPropOn(EnemyPathNode node)
