@@ -15,7 +15,7 @@ public class WaveSpawner : MonoBehaviour
 
     public TextMeshProUGUI waveCountDownText;
 
-    private int waveNumber = 0;
+    public static int waveNumber = 0;
 
     private void Start()
     {
@@ -34,7 +34,8 @@ public class WaveSpawner : MonoBehaviour
 
     void spawnNormalEnemy()
     {
-        Instantiate(enemyPrefab, spawnPoint.position + new Vector3(0.0f, -0.5f, 0.0f), spawnPoint.rotation);
+        Transform normalEnemyInstance = Instantiate(enemyPrefab, spawnPoint.position + new Vector3(0.0f, -0.5f, 0.0f), spawnPoint.rotation);
+        GameObject normalEnemy = normalEnemyInstance.gameObject;
     }
 
     void spawnDragon()

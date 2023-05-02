@@ -20,7 +20,8 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initialHealth = health;
+        initialHealth = health + health * 0.05f * (WaveSpawner.waveNumber - 1f);
+        health = initialHealth;
         speed = initialSpeed;
         target = Waypoints.points[0];
     }
