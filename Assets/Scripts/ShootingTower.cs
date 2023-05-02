@@ -30,7 +30,7 @@ public class ShootingTower : MonoBehaviour
     public GameObject fixingEffect;
     public AudioSource fixingSound;
 
-    //public TextMeshProUGUI WoodsAlert;
+    public TextMeshProUGUI WoodsAlert;
 
     // Start is called before the first frame update
     void Start()
@@ -87,7 +87,7 @@ public class ShootingTower : MonoBehaviour
         }
     }
 
-    /*
+
     IEnumerator ShowAndHideWoodsAlert()
     {
         // show the text object
@@ -98,7 +98,7 @@ public class ShootingTower : MonoBehaviour
         // hide the text object
         WoodsAlert.gameObject.SetActive(false);
     }
-    */
+
 
     private void OnMouseExit()
     {
