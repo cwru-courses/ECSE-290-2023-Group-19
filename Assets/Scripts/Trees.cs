@@ -19,7 +19,7 @@ public class Trees : MonoBehaviour
 
     private int totalTrees = 0;
     public int treeCount = 10;
-    public float interactionDistance = 2f;
+    public float interactionDistance = 0.5f;
     public int maxWoodPerTree = 2;
     public GameObject woodPrefab;
 
@@ -77,18 +77,11 @@ public class Trees : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Collectible"))
                 {
-                    foreach (GameObject wood in woods)
-                    {
-                        if (Vector3.Distance(wood.transform.position, hit.point) < interactionDistance)
-                        {
-                            PlayerStats.totalWood++;
-                            woods.Remove(wood);
-                            Destroy(wood);
-
-                            Debug.Log("Collected wood");
-                            break;
-                        }
-                    }
+                    GameObject wood = hit.collider.gameObject;
+                    PlayerStats.totalWood++;
+                    woods.Remove(wood);
+                    Destroy(wood);
+                    Debug.Log("Collected wood");
                 }
             }
         }
@@ -104,7 +97,7 @@ public class Trees : MonoBehaviour
 
                 foreach (GameObject tree in trees)
                 {
-                    if (Vector3.Distance(tree.transform.position, hit.point) < interactionDistance)
+                    if (hit.collider.gameObject == tree)
                     {
                         int woodCount = Random.Range(1, maxWoodPerTree + 1);
                         float woodHeightOffset = 0.5f;

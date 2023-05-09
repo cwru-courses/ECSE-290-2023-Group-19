@@ -41,27 +41,33 @@ public class BombExplode : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         createEffect();
         audioSource.Play();
-        foreach (GameObject enemy in enemies)
+        if (enemies != null)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (enemy != null && distanceToEnemy <= range)
+            foreach (GameObject enemy in enemies)
             {
-                Damage(enemy);
+                float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+                if (enemy != null && distanceToEnemy <= range)
+                {
+                    Damage(enemy);
+                }
             }
+            transform.position = transform.position + new Vector3(0f, -10f, 0f);
         }
-        transform.position = transform.position + new Vector3(0f, -10f, 0f);
     }
+
 
     void Damage(GameObject enemy)
     {
         enemy.GetComponent<EnemyMovement>().TakeDamage(damage);
     }
 
+
     void createEffect()
     {
         GameObject effect = (GameObject)Instantiate(explodeEffect, transform.position, transform.rotation);
         StartCoroutine(waitToDestroyEffect(effect));
     }
+
 
     IEnumerator waitToDestroyEffect(GameObject effect)
     {

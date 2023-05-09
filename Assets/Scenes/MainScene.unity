@@ -2484,7 +2484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 836011586}
   maxRotationAngle: 20
-  rotSpeed: 1
+  rotSpeed: 0.5
 --- !u!45 &166008251
 Skybox:
   m_ObjectHideFlags: 0
@@ -11155,7 +11155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 166008247}
-  moveSpeed: 5
+  moveSpeed: 3.5
   rotSpeed: 15
   gravity: -9.8
   terminalVelocity: -20
@@ -14914,7 +14914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd11dcdd9ec1e4906a2d4dd4654413e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 400
+  startMoney: 150
   startWood: 0
   startBomb: 0
 --- !u!143 &1143164909
@@ -17675,7 +17675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7627878295300566999, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
       propertyPath: m_text
-      value: 100 Coins
+      value: 200 Coins
       objectReference: {fileID: 0}
     - target: {fileID: 7627878295672049697, guid: c3c1751630c1f46e4858660d64d1ce80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -21299,7 +21299,7 @@ MonoBehaviour:
     cost: 50
   arrowTower:
     prefab: {fileID: 4644583560905145983, guid: 0500c7f47626ec441b30ee6614f5d2df, type: 3}
-    cost: 100
+    cost: 200
   slowingTower:
     prefab: {fileID: 8285940201275191969, guid: e3327bdc614dad44998e3311b3ab4794, type: 3}
     cost: 300
@@ -21844,7 +21844,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 54cbb712ea809e649a7dafb8a7244015, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.26
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -22209,7 +22209,7 @@ MonoBehaviour:
   Xoffset: 5
   Zoffset: 5
   treeCount: 75
-  interactionDistance: 0.9
+  interactionDistance: 0.7
   maxWoodPerTree: 2
   woodPrefab: {fileID: 6604790417187696603, guid: 63a41ff51baa285678539abba629f286, type: 3}
   delayTime: 1
